@@ -9,7 +9,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 public class SecurityWebApplicationInitializer implements WebApplicationInitializer {
 
-	public void onStartup(ServletContext container) throws ServletException {
+	public void onStartup(ServletContext container){
 		AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
         ctx.register(SpringWebConfig.class);
         ctx.setServletContext(container);
