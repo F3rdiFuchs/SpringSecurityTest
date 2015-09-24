@@ -18,8 +18,8 @@ public class LoginController {
 		this.testService = testService;
 	}
 	
-	@RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
-	public String printWelcome(ModelMap model) {
+	@RequestMapping(value ="/login", method = RequestMethod.GET)
+	public String showLogin(ModelMap model) {
 		return "login";
 	}
 }
