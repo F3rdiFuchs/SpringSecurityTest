@@ -21,11 +21,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	{
 		http
 		.authorizeRequests()                                                                                
-			.antMatchers("/admin/**").hasRole("ADMIN")       //7 darf nur der Admin                                          					 // alle andere darf besucht werden   
+			.antMatchers("/admin/**").hasRole("ADMIN")       							// darf nur der Admin
+			.antMatchers("/data/**").access("hasRole('ADMIN') and hasRole('USER')")     // Admin und User
 			.and().formLogin().loginPage("/login")
 			.usernameParameter("userName").passwordParameter("passWord")
 			.and().csrf()
-			.and().exceptionHandling().accessDeniedPage("/Access_Denied");
+			.and().exceptionHandling().accessDeniedPage("/Access_Denied"); // noch nicht implementiert
 	}
 	
 }

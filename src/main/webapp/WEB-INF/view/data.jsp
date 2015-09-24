@@ -5,10 +5,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>LAlala</title>
+		<title>Data</title>
 	</head> 
 	<body>
-		<h1>Admin </h1><a href="<c:url value="../login?logout" />">Logout</a>
-		
+		<h1>Data </h1><a href="<c:url value="../login?logout" />">Logout</a>
 	</body>
 </html>

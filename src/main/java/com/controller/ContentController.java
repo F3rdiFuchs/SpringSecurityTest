@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ContentController {
 	
-	@RequestMapping(value = "/admin/show", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String showAdminPage(ModelMap model) {
 		return "admin";
+	}
+	
+	@RequestMapping(value = "/data", method = RequestMethod.GET)
+	public String showDataPage(ModelMap model) {
+		return "data";
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)

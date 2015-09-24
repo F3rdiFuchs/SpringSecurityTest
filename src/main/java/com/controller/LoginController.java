@@ -22,4 +22,9 @@ public class LoginController {
 	public String showLogin(ModelMap model) {
 		return "login";
 	}
+	
+	@RequestMapping(value ="/Access_Denied", method = RequestMethod.GET)
+	public String showAccesDenied(ModelMap model) {
+		return "accessdenied";
+	}
 }

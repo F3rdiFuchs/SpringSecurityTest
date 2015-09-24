@@ -5,10 +5,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>LAlala</title>
+		<title>Access_Denied</title>
 	</head> 
 	<body>
-		<h1>Admin </h1><a href="<c:url value="../login?logout" />">Logout</a>
-		
+		<h1>Access_Denied </h1>
 	</body>
 </html>
