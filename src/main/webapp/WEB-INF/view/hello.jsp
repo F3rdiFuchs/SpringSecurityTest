@@ -5,9 +5,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Welcome</title>
+		<title>LAlala</title>
 	</head> 
 	<body>
-		<a href="${messageUrl}">Click to enter</a>
+		<h1>Nothing</h1>
 	</body>
 </html>
