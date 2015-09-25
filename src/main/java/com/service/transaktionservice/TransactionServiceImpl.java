@@ -40,5 +40,4 @@ public class TransactionServiceImpl {
 		session.close();
 		return data;
 	}
-	
 }
