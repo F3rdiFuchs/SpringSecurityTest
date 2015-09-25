@@ -7,6 +7,6 @@ public class ExecuteException extends RuntimeException {
 
 	public ExecuteException()
 	{
-		super("This only happens if the test is ok!");
+		super("There is an error in the execute function");
 	}
 }
