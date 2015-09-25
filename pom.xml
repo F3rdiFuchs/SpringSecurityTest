@@ -104,12 +104,6 @@
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
-        
-        <dependency>
-		   <groupId>org.hibernate</groupId>
-		   <artifactId>hibernate-validator</artifactId>
-		   <version>${hibernate-validator.version}</version>
-		</dependency>
 		
 		<!-- MySQL -->
 		<dependency>
@@ -118,7 +112,18 @@
 			<version>${mysql-connector-java.version}</version>
 		</dependency>
 		
-		<!-- Test  -->
+		<!-- Other  -->
+		<dependency>
+		   <groupId>org.javassist</groupId>
+		   <artifactId>javassist</artifactId>
+		   <version>3.18.2-GA</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.tomcat</groupId>
+		    <artifactId>tomcat-dbcp</artifactId>
+		    <version>7.0.55</version>
+		</dependency>
 		
 	</dependencies>	
 </project>

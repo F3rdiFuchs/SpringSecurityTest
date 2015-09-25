@@ -15,9 +15,6 @@ public class TransactionServiceImpl {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	public TransactionServiceImpl() {
-	}
-
 	public <T> T doInTransaktion(TransactionService<T> dataObject)
 	{
 		Transaction tx = null;
@@ -27,16 +24,10 @@ public class TransactionServiceImpl {
 		session = this.sessionFactory.openSession();
 		tx = session.beginTransaction();
 		
-		try
-		{
+		
 			data = dataObject.execute(session);
 			tx.commit();
-		}
-		catch (Exception e)
-		{
-			tx.rollback();
-			throw new ExecuteException();
-		}
+		
 		session.close();
 		return data;
 	}

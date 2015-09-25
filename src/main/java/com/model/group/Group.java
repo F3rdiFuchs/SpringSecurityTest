@@ -15,12 +15,12 @@ public class Group {
 	
 	@Id 
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id; 
+	private Integer id; 
 	
 	@Column(name="type", length=15, unique=true, nullable=false)
 	private String type = UserProfileType.USER.getUserProfileType();
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
