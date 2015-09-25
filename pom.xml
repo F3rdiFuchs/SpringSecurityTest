@@ -24,10 +24,10 @@
 		
 		<!-- Hibernate / JPA -->
 		<hibernate.version>4.2.1.Final</hibernate.version>
-
-		<!-- Logging -->
-		<logback.version>1.0.13</logback.version>
-		<slf4j.version>1.7.5</slf4j.version>
+		<hibernate-validator.version>5.2.1.Final</hibernate-validator.version>
+		
+		<!-- MySQL -->
+		<mysql-connector-java.version>5.1.36</mysql-connector-java.version>
 
 		<!-- Test -->
 		<junit.version>4.11</junit.version>
@@ -35,6 +35,27 @@
 	</properties>
 	
 	<dependencies>
+	
+	<!-- Web  -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>${jsp.version}</version>
+			<scope>provided</scope>
+		</dependency>
 	
 		<!-- Spring -->
 		<dependency>
@@ -69,46 +90,35 @@
 			<artifactId>spring-security-web</artifactId>
 			<version>${spring-security.version}</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
 			<version>${spring-security.version}</version>
 		</dependency>
 		
-		<!-- Other Web dependencies -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>${jstl.version}</version>
-		</dependency>
+		<!-- Hibernate / JPA -->
 		
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>${servlet.version}</version>
-			<scope>provided</scope>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        
+        <dependency>
+		   <groupId>org.hibernate</groupId>
+		   <artifactId>hibernate-validator</artifactId>
+		   <version>${hibernate-validator.version}</version>
 		</dependency>
 		
+		<!-- MySQL -->
 		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>${jsp.version}</version>
-			<scope>provided</scope>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java.version}</version>
 		</dependency>
 		
-
-		<!-- Logging with SLF4J & LogBack -->
-		
-
-		<!-- kann evtl weg -->
-	
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.12</version>
-		</dependency>
-		
-		<!-- Test Artifacts -->
+		<!-- Test  -->
 		
 	</dependencies>	
 </project>
