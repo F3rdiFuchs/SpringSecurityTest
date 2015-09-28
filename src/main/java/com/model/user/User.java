@@ -45,8 +45,8 @@ public class User {
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "useringroup", 
-    joinColumns = { @JoinColumn(name = "user_userid") }, 
-    inverseJoinColumns = { @JoinColumn(name = "group_groupid") })
+    joinColumns = { @JoinColumn(name = "userid") }, 
+    inverseJoinColumns = { @JoinColumn(name = "groupid") })
 	private Set<Group>groups = new HashSet<Group>();
 
 	public Integer getUserid() {
