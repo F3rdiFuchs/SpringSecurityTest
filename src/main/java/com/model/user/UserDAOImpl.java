@@ -1,7 +1,6 @@
 package com.model.user;
 
 import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -31,7 +30,7 @@ public class UserDAOImpl implements UserDAO {
 						
 						public User execute(Session session) {
 						User user = null;
-						user = (User) session.createCriteria( User.class ).add( Restrictions.eq("username", userName)).uniqueResult();
+						user = (User) session.createQuery("FROM User Where username= :uname").setParameter("uname", userName).uniqueResult();
 						return user;
 					}
 			});
