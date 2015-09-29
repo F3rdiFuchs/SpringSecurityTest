@@ -2,7 +2,6 @@ package com.servlet;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import com.configuration.SecurityConfig;
 import com.configuration.SpringWebConfig;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

@@ -30,7 +30,7 @@ public class UserDAOImpl implements UserDAO {
 						
 						public User execute(Session session) {
 						User user = null;
-						user = (User) session.createQuery("FROM User Where username= :uname").setParameter("uname", userName).uniqueResult();
+						user = (User) session.createQuery("FROM User WHERE username= :uname").setParameter("uname", userName).uniqueResult();
 						return user;
 					}
 			});

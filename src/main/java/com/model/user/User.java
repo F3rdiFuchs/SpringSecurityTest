@@ -42,8 +42,9 @@ public class User {
 	@Column(name="state", nullable=false)
 	private String state = State.ACTIVE.getState();
 	
+	
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "useringroup", joinColumns = @JoinColumn(name = "userid") , inverseJoinColumns = @JoinColumn(name = "groupid"))
+	@JoinTable(name = "usergroup", joinColumns = @JoinColumn(name = "userid") , inverseJoinColumns = @JoinColumn(name = "groupid"))
 	private List<Group>groups;
 
 	public Integer getUserid() {
@@ -101,7 +102,7 @@ public class User {
 	public void setState(String state) {
 		this.state = state;
 	}
-
+	
 	public List<Group> getGroups() {
 		return groups;
 	}
