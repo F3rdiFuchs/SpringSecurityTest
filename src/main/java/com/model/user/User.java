@@ -1,6 +1,9 @@
 package com.model.user;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,39 +16,40 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import com.enums.State;
-import com.model.group.Group;
+import com.model.userrole.UserRole;
 
+@SuppressWarnings("unused")
 @Entity
-@Table(name="user")
+@Table(name = "user")
 public class User {
 	
 	@Id 
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="userid")
 	private Integer userid;
 	
-	@Column(name="username", unique=true, nullable=false)
+	@Column(name = "username", unique = true, nullable = false)
 	private String username;
 	
-	@Column(name="password", nullable=false)
+	@Column(name = "password", nullable = false)
 	private String password;
 	
-	@Column(name="firstname", nullable=false)
+	@Column(name = "firstname", nullable = false)
 	private String firstname;
 	
-	@Column(name="lastname", nullable=false)
+	@Column(name = "lastname", nullable = false)
 	private String lastname;
 	
-	@Column(name="email", nullable=false)
+	@Column(name = "email", nullable = false)
 	private String email;
 	
-	@Column(name="state", nullable=false)
+	@Column(name = "state", nullable = false)
 	private String state = State.ACTIVE.getState();
 	
 	
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "usergroup", joinColumns = @JoinColumn(name = "userid") , inverseJoinColumns = @JoinColumn(name = "groupid"))
-	private List<Group>groups;
+	@JoinTable(name = "userhasrole", joinColumns = @JoinColumn(name = "userid") , inverseJoinColumns = @JoinColumn(name = "roleid"))
+	private List<UserRole>roles = new ArrayList<UserRole>();
 
 	public Integer getUserid() {
 		return userid;
@@ -102,12 +106,12 @@ public class User {
 	public void setState(String state) {
 		this.state = state;
 	}
-	
-	public List<Group> getGroups() {
-		return groups;
+
+	public List<UserRole> getRoles() {
+		return roles;
 	}
 
-	public void setGroups(List<Group> groups) {
-		this.groups = groups;
+	public void setRoles(List<UserRole> roles) {
+		this.roles = roles;
 	}
 }

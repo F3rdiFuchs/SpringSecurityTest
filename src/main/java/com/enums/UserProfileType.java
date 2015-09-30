@@ -2,16 +2,16 @@ package com.enums;
 
 public enum UserProfileType {
 	USER("USER"),
-    GUEST("GUEST"),
-    ADMIN("ADMIN");
+    GUEST("ADMIN"),
+    ADMIN("GUEST");
      
-    String userProfileType;
+    private String userProfileType;
      
-    private UserProfileType(String userProfileType){
+    private UserProfileType(String userProfileType) {
         this.userProfileType = userProfileType;
     }
      
-    public String getUserProfileType(){
+    public String getUserProfileType() {
         return userProfileType;
     }
 }

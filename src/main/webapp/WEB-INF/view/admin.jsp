@@ -8,7 +8,7 @@
 		<title>LAlala</title>
 	</head> 
 	<body>
-		<h1>Admin </h1><a href="<c:url value="../login?logout" />">Logout</a>
+		<h1>Admin </h1><a href="<c:url value="/logout" />">Logout</a>
 		
 	</body>
 </html>

@@ -8,6 +8,6 @@
 		<title>LAlala</title>
 	</head> 
 	<body>
-		<h1>Nothing </h1><a href="<c:url value="/admin" />">Admin </a><br><a href="<c:url value="/data" />">Data </a><br><a href="<c:url value="/login?logout" />">Logout</a>
+		<h1>Nothing </h1><a href="<c:url value="/admin" />">Admin </a><br><a href="<c:url value="/data" />">Data </a><br><a href="<c:url value="/logout" />">Logout</a>
 	</body>
 </html>

@@ -14,13 +14,13 @@
          <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
               
-              <input type="text" class="form-control" id="userName" name="userName" placeholder="Enter Username" required>  
+              <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>  
                                                     
         </div>
 
         <div class="input-group">
            
-           <input type="password" class="form-control" id="passWord" name="passWord" placeholder="Enter Password" required> 
+           <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required> 
                                                   
         </div>
         <input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />

@@ -1,4 +1,4 @@
-package com.model.group;
+package com.model.userrole;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,23 +10,23 @@ import javax.persistence.Table;
 import com.enums.UserProfileType;
 
 @Entity
-@Table(name="group")
-public class Group {
+@Table(name="userrole")
+public class UserRole {
 	
 	@Id 
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="groupid")
-	private Integer groupid; 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "roleid")
+	private Integer roleid; 
 	
-	@Column(name="type", length=15, unique=true, nullable=false)
+	@Column(name = "type", length = 15, unique = true, nullable = false)
 	private String type = UserProfileType.USER.getUserProfileType();
 
-	public Integer getId() {
-		return groupid;
+	public Integer getRoleid() {
+		return roleid;
 	}
 
-	public void setId(int groupId) {
-		this.groupid = groupId;
+	public void setRoleid(Integer roleid) {
+		this.roleid = roleid;
 	}
 
 	public String getType() {
