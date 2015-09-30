@@ -3,6 +3,7 @@ package com.configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -22,6 +23,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	{
 		auth.userDetailsService(userDetailsService);
 	}
+	/*
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http
+	      .httpBasic().and()
+	      .authorizeRequests()
+	      	.antMatchers(HttpMethod.GET, "/admin/**").hasRole("ADMIN")
+	        .antMatchers(HttpMethod.POST, "/admin/").hasRole("ADMIN")
+	        .antMatchers(HttpMethod.PUT, "/admin/**").hasRole("ADMIN")
+	        .antMatchers(HttpMethod.PATCH, "/admin/**").hasRole("ADMIN").and()
+	      .csrf().disable();
+	}
+	*/
+	
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception
@@ -35,6 +50,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.and().csrf()
 			.and().exceptionHandling().accessDeniedPage("/Access_Denied"); // noch nicht implementiert
 	}
+	/*
+	only http Security
+	protected void configure(HttpSecurity http) throws Exception
+	{
+		http
+		.authorizeRequests()
+			.anyRequest().authenticated()
+			.and()
+		.formLogin()
+			.and()
+		.httpBasic();
+	}*/
 }
 
 /*
